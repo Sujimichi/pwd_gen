@@ -10,9 +10,10 @@ CHARS   = (33..47).to_a + (58..64).to_a + (91..96).to_a + (123..126).to_a
 class Password
 
   # Set the password's length
-  def initialize(l=16, c="yyy")
+  def initialize l = 16, c = "yyy"
     @length = l
     @chars = c
+    selection = [] #selection needs to be defined before you can call += on it later
 
     if @chars[0] == "y"
       selection += LETTERS
@@ -34,5 +35,5 @@ class Password
   end
 end
 
-p = Password.new()
+p = Password.new
 puts p
